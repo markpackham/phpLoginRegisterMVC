@@ -7,8 +7,6 @@ require APPROOT . '/views/includes/head.php';
     require APPROOT . '/views/includes/navigation.php';
     ?>
 </div>
-Login
-
 <div class="container-login">
     <div class="wrapper-login">
         <h2>Sign in</h2>

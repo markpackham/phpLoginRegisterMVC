@@ -1,12 +1,10 @@
 <?php
-class Pages extends Controller
-{
-    public function __construct()
-    {
+class Pages extends Controller {
+    public function __construct() {
+        //$this->userModel = $this->model('User');
     }
 
-    public function index()
-    {
+    public function index() {
         $data = [
             'title' => 'Home page'
         ];
@@ -14,8 +12,7 @@ class Pages extends Controller
         $this->view('index', $data);
     }
 
-    public function about()
-    {
+    public function about() {
         $this->view('about');
     }
 }
