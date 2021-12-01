@@ -23,6 +23,7 @@ require APPROOT . '/views/includes/head.php';
                 <?php echo $data['emailError']; ?>
             </span>
 
+            <div>Password must be 8 characters with letters & numbers.</div>
             <input type="password" placeholder="Password *" name="password">
             <span class="invalidFeedback">
                 <?php echo $data['passwordError']; ?>

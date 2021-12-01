@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2021 at 02:23 PM
+-- Generation Time: Dec 01, 2021 at 09:28 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phpLoginRegisterMVC`
+-- Database: `phploginregistermvc`
 --
 
 -- --------------------------------------------------------
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -38,9 +38,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `password`) VALUES
-(1, 'jim', 'jim@email.com', 'jimpassword'),
-(2, 'bob', 'bob@email.com', 'bobpassword');
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(3, 'joe', 'joe@email.com', '$2y$10$UkpNWeQCc5sFdIbSfkeyQe8vHsC.oEPsXPD1QHaUhGkW.Vq.5oksy'),
+(4, 'password123', 'password123@email.com', '$2y$10$lH0MFAYmuFmJj0eP9xTpw.5uE0EQi4sKmdKa3x0pB.eR.z40qS/ca');
 
 --
 -- Indexes for dumped tables
@@ -50,7 +50,7 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_email`, `password`) VALUES
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -60,7 +60,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

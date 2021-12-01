@@ -17,6 +17,23 @@ class User
         return $result;
     }
 
+    public function register($data)
+    {
+        $this->db->query("INSERT INTO users (username, email, password) VALUES(:username, :email, :password)");
+
+        // Bind values
+        $this->db->bind(':username', $data["username"]);
+        $this->db->bind(':email', $data["email"]);
+        $this->db->bind(':password', $data["password"]);
+
+        // Execute function
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // email is passed in by the controller
     public function findUserByEmail($email)
     {
