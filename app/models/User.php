@@ -34,6 +34,14 @@ class User
         }
     }
 
+    public function login($username, $password)
+    {
+        $this->db->query('SELECT * FROM users WHERE username = :username');
+
+        $this->db->bind(':username', $username);
+        $this->db->bind(':password', $password);
+    }
+
     // email is passed in by the controller
     public function findUserByEmail($email)
     {
