@@ -7,7 +7,7 @@ define("DB_PASS", "");
 define("DB_NAME", "phpLoginRegisterMVC");
 
 // APPROOT
-define("APPROOT", dirname(dirname(__FILE__)));
+define('APPROOT', dirname(dirname(__FILE__)));
 
 // URLROOT for dynamic links
 define("URLROOT", "http://localhost/phpLoginRegisterMVC");
