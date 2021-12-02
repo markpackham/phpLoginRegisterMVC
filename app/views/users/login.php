@@ -7,7 +7,6 @@ require APPROOT . '/views/includes/head.php';
     require APPROOT . '/views/includes/navigation.php';
     ?>
 </div>
-<?php var_dump($_SESSION); ?>
 <div class="container-login">
     <div class="wrapper-login">
         <h2>Login</h2>
