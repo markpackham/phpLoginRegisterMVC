@@ -40,6 +40,17 @@ class User
 
         $this->db->bind(':username', $username);
         $this->db->bind(':password', $password);
+
+        $row = $this->db->single();
+
+        $hashedPassword = $row->password;
+
+        // check if the password we submitted matches the hashed verison in the database
+        if (password_verify($password, $hashedPassword)) {
+            return $row;
+        } else {
+            return false;
+        }
     }
 
     // email is passed in by the controller
