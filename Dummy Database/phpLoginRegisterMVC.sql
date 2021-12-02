@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 09:28 PM
+-- Generation Time: Dec 02, 2021 at 04:04 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -40,7 +40,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (3, 'joe', 'joe@email.com', '$2y$10$UkpNWeQCc5sFdIbSfkeyQe8vHsC.oEPsXPD1QHaUhGkW.Vq.5oksy'),
-(4, 'password123', 'password123@email.com', '$2y$10$lH0MFAYmuFmJj0eP9xTpw.5uE0EQi4sKmdKa3x0pB.eR.z40qS/ca');
+(4, 'password123', 'password123@email.com', '$2y$10$lH0MFAYmuFmJj0eP9xTpw.5uE0EQi4sKmdKa3x0pB.eR.z40qS/ca'),
+(5, 'password321', 'password321@email.com', '$2y$10$Iw1HRamz1YUfSiVvS9kH5O0D2K.Bbc.YrXliVNHXPAFI.7eJUaVkm');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +61,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
