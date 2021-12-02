@@ -12,12 +12,10 @@ class Database
 
     public function __construct()
     {
-        $conn = "mysql:host=" . $this->dbHost . ";dbname=" . $this->dbName;
+        $conn = 'mysql:host=' . $this->dbHost . ';dbname=' . $this->dbName;
         $options = array(
-            // prevent driver timeouts when connecting to database
-            // also check if a connection has already been established
             PDO::ATTR_PERSISTENT => true,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
         try {
             $this->dbHandler = new PDO($conn, $this->dbUser, $this->dbPass, $options);
@@ -27,12 +25,13 @@ class Database
         }
     }
 
-    // Allows us to write database queries
+    //Allows us to write queries
     public function query($sql)
     {
         $this->statement = $this->dbHandler->prepare($sql);
     }
-    // Bind values
+
+    //Bind values
     public function bind($parameter, $value, $type = null)
     {
         switch (is_null($type)) {
@@ -51,27 +50,27 @@ class Database
         $this->statement->bindValue($parameter, $value, $type);
     }
 
-    // Execture prepared statement
+    //Execute the prepared statement
     public function execute()
     {
         return $this->statement->execute();
     }
 
-    // Return an array
+    //Return an array
     public function resultSet()
     {
         $this->execute();
         return $this->statement->fetchAll(PDO::FETCH_OBJ);
     }
 
-    // Return a specific row as an object
+    //Return a specific row as an object
     public function single()
     {
         $this->execute();
         return $this->statement->fetch(PDO::FETCH_OBJ);
     }
 
-    // Get the row count (vital if we want to run an Update query)
+    //Get's the row count
     public function rowCount()
     {
         return $this->statement->rowCount();

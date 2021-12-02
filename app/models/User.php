@@ -39,7 +39,6 @@ class User
         $this->db->query('SELECT * FROM users WHERE username = :username');
 
         $this->db->bind(':username', $username);
-        $this->db->bind(':password', $password);
 
         $row = $this->db->single();
 
